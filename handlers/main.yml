@@ -1,0 +1,9 @@
+---
+# handlers file for openssh
+- name: restart openssh
+  service:
+    name: "{{ openssh_service[ansible_distribution]
+          | default (openssh_service['default'] ) }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"

@@ -1,0 +1,35 @@
+---
+# vars file for openssh
+openssh_packages:
+  default:
+    - openssh-server
+  Archlinux:
+    - openssh
+  Debian:
+    - openssh-server
+  openSUSE Leap:
+    - openssh
+  openSUSE Tumbleweed:
+    - openssh
+  Ubuntu:
+    - openssh-server
+
+openssh_key_types:
+  default:
+    - rsa
+    - ecdsa
+    - ed25519
+  CentOS-6:
+    - rsa
+    - ecdsa
+
+openssh_run_directory:
+  default: /var/run/sshd/
+  Debian: /run/sshd
+  Ubuntu: /run/sshd
+
+openssh_configuration_file:
+  default: /etc/ssh/sshd_config
+
+openssh_service:
+  default: sshd

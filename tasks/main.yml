@@ -1,0 +1,54 @@
+---
+# tasks file for openssh
+- name: install openssh
+  package:
+    name: "{{ openssh_packages[ansible_distribution]
+          | default(openssh_packages['default']) }}"
+    state: "{{ openssh_package_state }}"
+
+- name: configure selinux to allow openssh_port
+  seport:
+    ports: "{{ openssh_port }}"
+    proto: "tcp"
+    setype: "ssh_port_t"
+    state: "present"
+  when:
+    - ansible_selinux.status is defined
+    - ansible_selinux.status == "enabled"
+
+- name: generate host key
+  command: /usr/bin/ssh-keygen -q -t {{ item }} -f /etc/ssh/ssh_host_{{ item }}_key -C '' -N ''
+  args:
+    creates: /etc/ssh/ssh_host_{{ item }}_key
+  with_items:
+    - "{{ openssh_key_types[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(openssh_key_types['default']) }}"
+
+- name: make run directory
+  file:
+    path: "{{ openssh_run_directory[ansible_distribution]
+          | default(openssh_run_directory['default']) }}"
+    state: directory
+
+- name: set openssh_port
+  lineinfile:
+    dest: "{{ openssh_configuration_file[ansible_distribution]
+          | default(openssh_configuration_file['default']) }}"
+    regexp: "^Port "
+    line: "Port {{ openssh_port }}"
+    validate: sshd -f %s -t
+  notify:
+    - restart openssh
+
+- name: switch to openssh_port
+  set_fact:
+    ansible_port: "{{ openssh_port }}"
+
+- name: start and enable openssh
+  service:
+    name: "{{ openssh_service[ansible_distribution]
+          | default(openssh_service['default']) }}"
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker"
