@@ -1,6 +1,8 @@
 ---
 # defaults file for openssh
-openssh_port: 2222
+
+# The tcp port ssh should listen on.
+openssh_port: 22
 
 # To update packages this role places on the system, set `openssh_package_state` to `latest`.
 openssh_package_state: present

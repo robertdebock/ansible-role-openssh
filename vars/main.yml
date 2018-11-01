@@ -1,20 +1,18 @@
 ---
 # vars file for openssh
-openssh_packages:
+_openssh_packages:
   default:
     - openssh-server
   Archlinux:
     - openssh
-  Debian:
-    - openssh-server
   openSUSE Leap:
     - openssh
   openSUSE Tumbleweed:
     - openssh
-  Ubuntu:
-    - openssh-server
 
-openssh_key_types:
+openssh_packages: "{{ _openssh_packages[ansible_distribution] | default(_openssh_packages['default']) }}"
+
+_openssh_key_types:
   default:
     - rsa
     - ecdsa
@@ -23,13 +21,15 @@ openssh_key_types:
     - rsa
     - ecdsa
 
-openssh_run_directory:
+openssh_key_types: "{{ _openssh_key_types[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_openssh_key_types['default']) }}"
+
+_openssh_run_directory:
   default: /var/run/sshd/
   Debian: /run/sshd
   Ubuntu: /run/sshd
 
-openssh_configuration_file:
-  default: /etc/ssh/sshd_config
+openssh_run_directory: "{{ _openssh_run_directory[ansible_distribution] | default(_openssh_run_directory['default']) }}"
 
-openssh_service:
-  default: sshd
+openssh_configuration_file: /etc/ssh/sshd_config
+
+openssh_service: sshd
