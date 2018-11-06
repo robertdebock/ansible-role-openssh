@@ -5,7 +5,6 @@ openssh
 
 The purpose of this role is to install and configure openssh on your system.
 
-
 Example Playbook
 ----------------
 
