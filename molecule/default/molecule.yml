@@ -38,6 +38,8 @@ platforms:
     image: ubuntu:artful
   - name: openssh-ubuntu-devel
     image: ubuntu:devel
+  - name: openssh-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
