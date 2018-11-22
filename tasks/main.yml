@@ -46,4 +46,4 @@
     state: started
     enabled: yes
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or openssh_ignore_docker
