@@ -4,6 +4,9 @@
   package:
     name: "{{ openssh_packages }}"
     state: "{{ openssh_package_state }}"
+  register: openssh_install_openssh
+  until: openssh_install_openssh
+  retries: 3
 
 - name: configure selinux to allow openssh_port
   seport:
