@@ -20,7 +20,7 @@ openssh_rekey_limit: default none
 # openssh_syslog_facility can be AUTH or AUTHPRIV
 openssh_syslog_facility: AUTHPRIV
 
-openssh_loglevel: INFOA
+openssh_loglevel: INFO
 
 openssh_login_grace_time: 2m
 openssh_permit_root_login: yes
