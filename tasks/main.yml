@@ -32,7 +32,7 @@
 
 - name: configure openssh
   template:
-    path: "{{ openssh_configuration_file }}"
+    dest: "{{ openssh_configuration_file }}"
     src: sshd_config.j2
     mode: "0600"
     owner: root
