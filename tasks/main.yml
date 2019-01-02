@@ -33,15 +33,17 @@
 - name: configure openssh
   template:
     dest: "{{ openssh_configuration_file }}"
-    src: "{{ lookup('first_found', templates) }}"
+    src: "{{ item }}"
     mode: "{{ openssh_template_mode }}"
     owner: root
     group: root
     validate: sshd -f %s -t
-  vars:
-    templates:
-      - "templates/ssh_config_{{ ansible_distribution ~ '-' ~ ansible_distribution_major_version }}.j2"
-      - "templates/ssh_config_{{ ansible_distribution }}.j2"
+  with_first_found:
+    - files:
+      - "ssh_config_{{ ansible_distribution ~ '-' ~ ansible_distribution_major_version }}.j2"
+      - "ssh_config_{{ ansible_distribution }}.j2"
+      paths:
+        - ../templates
   notify:
     - restart openssh
 
