@@ -4,7 +4,7 @@ AddressFamily {{ openssh_address_family }}
 
 {% for address in openssh_listen_address %}
 ListenAddress {{ address }}
-{% enfor %}
+{% endfor %}
 
 {% for hostkey in openssh_host_key %}
 HostKey {{ hostkey }}
