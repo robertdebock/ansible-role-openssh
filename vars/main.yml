@@ -34,6 +34,19 @@ openssh_configuration_file: /etc/ssh/sshd_config
 
 openssh_service: sshd
 
+_openssh_template_src:
+  Alpine: ssh_config_Alpine.j2
+  Archlinux: ssh_config_Archlinux.j2
+  CentOS-6: ssh_config_Centos-6.j2
+  CentOS-7: ssh_config_CentOS-7.j2
+  Debian: ssh_config_Debian.j2
+  Fedora: ssh_config_Fedora.j2
+  openSUSE Leap: ssh_config_openSUSE.j2
+  openSUSE Tumbleweed: ssh_config_openSUSE.j2
+  Ubuntu: ssh_config_Debian.j2
+
+openssh_template_src: "{{ _openssh_template_src[ansible_distribution ~ '-' ~ ansible_distribution_major_version | default(_openssh_template_src[ansible_distribution]) }}"
+
 _openssh_template_mode:
   Alpine: "0644"
   Archlinux: "0644"
