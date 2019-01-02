@@ -10,8 +10,6 @@ ListenAddress {{ address }}
 HostKey {{ hostkey }}
 {% endfor %}
 
-RekeyLimit {{ openssh_rekey_limit }}
-
 SyslogFacility {{ openssh_syslog_facility }}
 LogLevel {{ openssh_loglevel }}
 
@@ -28,7 +26,6 @@ AuthorizedKeysFile {{ openssh_authorized_key_file }}
 AuthorizedPrincipalsFile {{ openssh_authorized_prinicpals_file }}
 
 AuthorizedKeysCommand {{ openssh_authorized_keys_command }}
-AuthorizedKeysCommandUser {{ openssh_authorized_keys_command_user }}
 
 HostbasedAuthentication {{ openssh_host_based_authentication }}
 IgnoreUserKnownHosts {{ openssh_ignore_user_known_hosts }}
@@ -43,7 +40,6 @@ GSSAPIAuthentication {{ openssh_gssapi_authentication }}
 GSSAPICleanupCredentials {{ openssh_gssapi_cleanup_credentials }}
 GSSAPIStrictAcceptorCheck {{ openssh_gssapi_strict_acceptor_check }}
 GSSAPIKeyExchange {{ openssh_gssapi_key_exchange }}
-GSSAPIEnablek5users {{ openssh_gssaip_enable_k5_users }}
 
 UsePAM {{ openssh_use_pam }}
 
@@ -53,7 +49,6 @@ GatewayPorts {{ openssh_gateway_ports }}
 X11Forwarding {{ openssh_x11_forwarding }}
 X11DisplayOffset {{ openssh_x11_display_offset }}
 X11UseLocalhost {{ openssh_x11_use_localhost }}
-PermitTTY {{ openssh_permit_tty }}
 
 PrintMotd {{ openssh_print_motd }}
 
@@ -69,7 +64,6 @@ PidFile {{ openssh_pid_file }}
 MaxStartups {{ openssh_max_startups }}
 PermitTunnel {{ openssh_permit_tunnel }}
 ChrootDirectory {{ openssh_chroot_directory }}
-VersionAddendum {{ openssh_version_addendum }}
 
 Banner {{ openssh_banner }}
 
