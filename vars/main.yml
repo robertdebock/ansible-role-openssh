@@ -45,7 +45,7 @@ _openssh_template_src:
   openSUSE Tumbleweed: ssh_config_openSUSE.j2
   Ubuntu: ssh_config_Debian.j2
 
-openssh_template_src: "{{ _openssh_template_src[ansible_distribution ~ '-' ~ ansible_distribution_major_version | default(_openssh_template_src[ansible_distribution]) }}"
+openssh_template_src: "{{ _openssh_template_src[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_openssh_template_src[ansible_distribution]) }}"
 
 _openssh_template_mode:
   Alpine: "0644"
