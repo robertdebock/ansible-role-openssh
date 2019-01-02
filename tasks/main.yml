@@ -33,7 +33,7 @@
 - name: configure openssh
   template:
     dest: "{{ openssh_configuration_file }}"
-    src: "{{ openssh_template_src }}
+    src: "{{ openssh_template_src }}"
     mode: "{{ openssh_template_mode }}"
     owner: root
     group: root
