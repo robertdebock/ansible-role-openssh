@@ -30,11 +30,13 @@
     path: "{{ openssh_run_directory }}"
     state: directory
 
-- name: set openssh_port
-  lineinfile:
-    dest: "{{ openssh_configuration_file }}"
-    regexp: "^Port "
-    line: "Port {{ openssh_port }}"
+- name: configure openssh
+  template:
+    path: "{{ openssh_configuration_file }}"
+    src: sshd_config.j2
+    mode: "0600"
+    owner: root
+    group: root
     validate: sshd -f %s -t
   notify:
     - restart openssh
