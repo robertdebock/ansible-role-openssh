@@ -39,11 +39,11 @@
     group: root
     validate: sshd -f %s -t
   with_first_found:
-    - files:
+    files:
       - "ssh_config_{{ ansible_distribution ~ '-' ~ ansible_distribution_major_version }}.j2"
       - "ssh_config_{{ ansible_distribution }}.j2"
-      paths:
-        - ../templates
+    paths:
+      - ../templates
   notify:
     - restart openssh
 
