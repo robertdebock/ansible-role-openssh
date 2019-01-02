@@ -41,10 +41,6 @@
   notify:
     - restart openssh
 
-- name: switch to openssh_port
-  set_fact:
-    ansible_port: "{{ openssh_port }}"
-
 - name: start and enable openssh
   service:
     name: "{{ openssh_service }}"
