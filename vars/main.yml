@@ -34,8 +34,6 @@ openssh_configuration_file: /etc/ssh/sshd_config
 
 openssh_service: sshd
 
-openssh_template_src: sshd_config_{{ ansible_distribution | default(ansible_distribution ~ '-' ~ ansible_distribution_major_version ) }}.j2
-
 _openssh_template_mode:
   Alpine: "0644"
   Archlinux: "0644"
