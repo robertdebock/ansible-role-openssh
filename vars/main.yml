@@ -37,7 +37,7 @@ openssh_service: sshd
 _openssh_template_src:
   Alpine: sshd_config_Alpine.j2
   Archlinux: sshd_config_Archlinux.j2
-  CentOS-6: sshd_config_Centos-6.j2
+  CentOS-6: sshd_config_CentOS-6.j2
   CentOS-7: sshd_config_CentOS-7.j2
   Debian: sshd_config_Debian.j2
   Fedora: sshd_config_Fedora.j2
