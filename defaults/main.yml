@@ -61,7 +61,7 @@ openssh_x11_display_offset: 10
 openssh_x11_use_localhost: yes
 openssh_permit_tty: yes
 
-PrintMotd no
+openssh_print_motd: no
 
 openssh_print_last_log: yes
 openssh_tcp_keep_alive: yes
