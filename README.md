@@ -3,7 +3,7 @@ openssh
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-openssh.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-openssh)
 
-The purpose of this role is to install and configure openssh on your system.
+Install and configure openssh on your system.
 
 Example Playbook
 ----------------
