@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: openssh-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: openssh-ubuntu-artful
-    image: ubuntu:artful
+  - name: openssh-ubuntu-latest
+    image: ubuntu:latest
+  - name: openssh-ubuntu-rolling
+    image: ubuntu:rolling
   - name: openssh-ubuntu-devel
     image: ubuntu:devel
   - name: openssh-ubuntu-latest
