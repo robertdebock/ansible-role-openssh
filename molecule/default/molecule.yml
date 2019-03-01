@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: openssh-opensuse-leap
     image: opensuse:leap
-  - name: openssh-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: openssh-ubuntu-latest
     image: ubuntu:latest
   - name: openssh-ubuntu-rolling
