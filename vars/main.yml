@@ -7,8 +7,6 @@ _openssh_packages:
     - openssh
   openSUSE Leap:
     - openssh
-  openSUSE Tumbleweed:
-    - openssh
 
 openssh_packages: "{{ _openssh_packages[ansible_distribution] | default(_openssh_packages['default']) }}"
 
@@ -42,7 +40,6 @@ _openssh_template_src:
   Debian: sshd_config_Debian.j2
   Fedora: sshd_config_Fedora.j2
   openSUSE Leap: sshd_config_openSUSE.j2
-  openSUSE Tumbleweed: sshd_config_openSUSE.j2
   Ubuntu: sshd_config_Debian.j2
 
 openssh_template_src: "{{ _openssh_template_src[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_openssh_template_src[ansible_distribution]) }}"
@@ -54,7 +51,6 @@ _openssh_template_mode:
   Debian: "0644"
   Fedora: "0600"
   openSUSE Leap: "0640"
-  openSUSE Tumbleweed: "0640"
   Ubuntu: "0644"
 
 openssh_template_mode: "{{ _openssh_template_mode[ansible_distribution] }}"
