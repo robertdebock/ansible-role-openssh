@@ -3,7 +3,7 @@
 - name: install openssh
   package:
     name: "{{ openssh_packages }}"
-    state: "{{ openssh_package_state }}"
+    state: present
   register: openssh_install_openssh
   until: openssh_install_openssh
   retries: 3
@@ -47,4 +47,4 @@
     state: started
     enabled: yes
   when:
-    - ansible_virtualization_type != "docker" or openssh_ignore_docker
+    - ansible_virtualization_type != "docker"

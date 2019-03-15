@@ -19,7 +19,6 @@ This example is taken from `molecule/default/playbook.yml`:
   roles:
     - robertdebock.bootstrap
     - robertdebock.openssh
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -129,15 +128,6 @@ openssh_accept_env:
   - XMODIFIERS
 
 openssh_subsystem: sftp /usr/libexec/openssh/sftp-server
-
-# To update packages this role places on the system, set `openssh_package_state` to `latest`.
-openssh_package_state: present
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-openssh_ignore_docker: yes
-
 ```
 
 Requirements
