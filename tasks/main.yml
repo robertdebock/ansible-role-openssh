@@ -5,7 +5,7 @@
     name: "{{ openssh_packages }}"
     state: present
   register: openssh_install_openssh
-  until: openssh_install_openssh
+  until: openssh_install_openssh is succeeded
   retries: 3
 
 - name: configure selinux to allow openssh_port
