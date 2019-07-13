@@ -25,9 +25,6 @@ platforms:
   - name: openssh-centos-latest
     image: centos:latest
     pre_build_image: yes
-  - name: openssh-debian-latest
-    image: debian:latest
-    pre_build_image: yes
   - name: openssh-debian-stable
     image: debian:stable
     pre_build_image: yes
