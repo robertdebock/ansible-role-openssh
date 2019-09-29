@@ -156,6 +156,17 @@ The following roles can be installed to ensure all requirements are met, using `
 
 ```
 
+This role uses the following modules:
+```yaml
+---
+- command
+- file
+- package
+- seport
+- service
+- template
+```
+
 Context
 -------
 
@@ -187,6 +198,9 @@ This role has been tested against the following distributions and Ansible versio
 |ubuntu-rolling|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
+
+
+
 
 Testing
 -------
