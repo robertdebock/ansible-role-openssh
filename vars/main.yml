@@ -5,10 +5,10 @@ _openssh_packages:
     - openssh-server
   Archlinux:
     - openssh
-  openSUSE Leap:
+  Suse:
     - openssh
 
-openssh_packages: "{{ _openssh_packages[ansible_distribution] | default(_openssh_packages['default']) }}"
+openssh_packages: "{{ _openssh_packages[ansible_os_family] | default(_openssh_packages['default']) }}"
 
 _openssh_key_types:
   default:
@@ -24,9 +24,8 @@ openssh_key_types: "{{ _openssh_key_types[ansible_distribution ~ '-' ~ ansible_d
 _openssh_run_directory:
   default: /var/run/sshd/
   Debian: /run/sshd
-  Ubuntu: /run/sshd
 
-openssh_run_directory: "{{ _openssh_run_directory[ansible_distribution] | default(_openssh_run_directory['default']) }}"
+openssh_run_directory: "{{ _openssh_run_directory[ansible_os_family] | default(_openssh_run_directory['default']) }}"
 
 openssh_configuration_file: /etc/ssh/sshd_config
 
@@ -45,12 +44,8 @@ _openssh_template_src:
 openssh_template_src: "{{ _openssh_template_src[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_openssh_template_src[ansible_distribution]) }}"
 
 _openssh_template_mode:
-  Alpine: "0644"
-  Archlinux: "0644"
-  CentOS: "0600"
-  Debian: "0644"
-  Fedora: "0600"
-  openSUSE Leap: "0640"
-  Ubuntu: "0644"
+  default: "0644"
+  RedHat: "0600"
+  Suse: "0640"
 
-openssh_template_mode: "{{ _openssh_template_mode[ansible_distribution] }}"
+openssh_template_mode: "{{ _openssh_template_mode[ansible_os_family] | default(_openssh_template_mode['default') }}"
