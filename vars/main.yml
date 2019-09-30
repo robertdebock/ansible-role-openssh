@@ -48,4 +48,4 @@ _openssh_template_mode:
   RedHat: "0600"
   Suse: "0640"
 
-openssh_template_mode: "{{ _openssh_template_mode[ansible_os_family] | default(_openssh_template_mode['default') }}"
+openssh_template_mode: "{{ _openssh_template_mode[ansible_os_family] | default(_openssh_template_mode['default']) }}"
