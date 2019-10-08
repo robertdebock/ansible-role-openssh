@@ -15,9 +15,6 @@ _openssh_key_types:
     - rsa
     - ecdsa
     - ed25519
-  CentOS-6:
-    - rsa
-    - ecdsa
 
 openssh_key_types: "{{ _openssh_key_types[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_openssh_key_types['default']) }}"
 
@@ -34,14 +31,13 @@ openssh_service: sshd
 _openssh_template_src:
   Alpine: sshd_config_Alpine.j2
   Archlinux: sshd_config_Archlinux.j2
-  CentOS-6: sshd_config_CentOS-6.j2
-  CentOS-7: sshd_config_CentOS-7.j2
+  RedHat-7: sshd_config_RedHat-7.j2
+  RedHat: sshd_config_RedHat.j2
   Debian: sshd_config_Debian.j2
   Fedora: sshd_config_Fedora.j2
-  openSUSE Leap: sshd_config_openSUSE.j2
-  Ubuntu: sshd_config_Debian.j2
+  Suse: sshd_config_Suse.j2
 
-openssh_template_src: "{{ _openssh_template_src[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_openssh_template_src[ansible_distribution]) }}"
+openssh_template_src: "{{ _openssh_template_src[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_openssh_template_src[ansible_distribution] | default(_openssh_template_src[ansible_os_family])) }}"
 
 _openssh_template_mode:
   default: "0644"
