@@ -194,7 +194,6 @@ This role has been tested on these Ansible versions:
 
 
 
-
 Testing
 -------
 
