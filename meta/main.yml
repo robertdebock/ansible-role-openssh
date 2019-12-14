@@ -39,6 +39,5 @@ galaxy_info:
     - openssh
     - archlinux
     - centos
-    - rhel
 
 dependencies: []
