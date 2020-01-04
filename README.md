@@ -4,6 +4,8 @@ openssh
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-openssh"> <img src="https://travis-ci.org/robertdebock/ansible-role-openssh.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/30937"/> <img src="https://img.shields.io/ansible/quality/30937"/>
 
+<a href="https://github.com/robertdebock/ansible-role-openssh/actions"><img src="https://github.com/robertdebock/ansible-role-openssh/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure openssh on your system.
 
 Example Playbook
@@ -175,7 +177,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |---------|----|
 |amazon|all|
 |alpine|all|
-|archlinux|all|
 |debian|all|
 |el|7, 8|
 |fedora|all|
