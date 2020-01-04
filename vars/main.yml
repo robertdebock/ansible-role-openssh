@@ -3,8 +3,6 @@
 _openssh_packages:
   default:
     - openssh-server
-  Archlinux:
-    - openssh
   Suse:
     - openssh
 
@@ -30,7 +28,6 @@ openssh_service: sshd
 
 _openssh_template_src:
   Alpine: sshd_config_Alpine.j2
-  Archlinux: sshd_config_Archlinux.j2
   RedHat-7: sshd_config_RedHat-7.j2
   RedHat: sshd_config_RedHat.j2
   Debian: sshd_config_Debian.j2
