@@ -22,8 +22,7 @@
   command: "/usr/bin/ssh-keygen -q -t {{ item }} -f /etc/ssh/ssh_host_{{ item }}_key -C '' -N ''"
   args:
     creates: "/etc/ssh/ssh_host_{{ item }}_key"
-  with_items:
-    - "{{ openssh_key_types }}"
+  loop: "{{ openssh_key_types }}"
 
 - name: make run directory
   file:
