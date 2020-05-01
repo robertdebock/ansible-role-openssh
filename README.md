@@ -18,6 +18,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
 
   roles:
     - role: robertdebock.openssh
+      openssh_allow_users: root
 ```
 
 The machine may need to be prepared using `molecule/resources/prepare.yml`:
@@ -43,6 +44,18 @@ For verification `molecule/resources/verify.yml` run after the role has been app
   tasks:
     - name: check if connection still works
       ping:
+
+    - name: Check if AllowUsers is set
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        line: AllowUsers root
+      check_mode: yes
+      register: openssh_check_if_allowusers_is_set
+
+    - name: assert results
+      assert:
+        that:
+          - openssh_check_if_allowusers_is_set is not changed
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -151,6 +164,10 @@ openssh_accept_env:
   - XMODIFIERS
 
 openssh_subsystem: sftp /usr/libexec/openssh/sftp-server
+
+# Restrict access to this (space separated list) of users.
+# For example: `openssh_allow_users: root my_user`
+# openssh_allow_users: root
 ```
 
 ## Requirements

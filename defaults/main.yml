@@ -98,3 +98,7 @@ openssh_accept_env:
   - XMODIFIERS
 
 openssh_subsystem: sftp /usr/libexec/openssh/sftp-server
+
+# Restrict access to this (space separated list) of users.
+# For example: `openssh_allow_users: root my_user`
+# openssh_allow_users: root

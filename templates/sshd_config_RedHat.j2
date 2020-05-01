@@ -146,3 +146,7 @@ Subsystem {{ openssh_subsystem }}
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
+
+{% if openssh_allow_users is defined %}
+AllowUsers {{ openssh_allow_users }}
+{% endif %}

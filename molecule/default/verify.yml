@@ -7,3 +7,15 @@
   tasks:
     - name: check if connection still works
       ping:
+
+    - name: Check if AllowUsers is set
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        line: AllowUsers root
+      check_mode: yes
+      register: openssh_check_if_allowusers_is_set
+
+    - name: assert results
+      assert:
+        that:
+          - openssh_check_if_allowusers_is_set is not changed
