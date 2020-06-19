@@ -70,17 +70,15 @@
   assert:
     that:
       - openssh_max_auth_tries is defined
-      - openssh_max_auth_tries | length > 0
       - openssh_max_auth_tries | int
-      - openssh_max_auth_tries | int > 0
+      - openssh_max_auth_tries | int >= 0
 
 - name: test if openssh_max_sessions is set correctly
   assert:
     that:
       - openssh_max_sessions is defined
-      - openssh_max_sessions | length > 0
       - openssh_max_sessions | int
-      - openssh_max_sessions | int > 0
+      - openssh_max_sessions | int >= 0
 
 - name: test if openssh_pub_key_authentication is set correctly
   assert:
@@ -229,9 +227,8 @@
   assert:
     that:
       - openssh_x11_display_offset is defined
-      - openssh_x11_display_offset | length > 0
       - openssh_x11_display_offset | int
-      - openssh_x11_display_offset | int > 1
+      - openssh_x11_display_offset | int > 0
 
 - name: test if openssh_x11_use_localhost is set correctly
   assert:
@@ -286,7 +283,6 @@
   assert:
     that:
       - openssh_client_alive_interval is defined
-      - openssh_client_alive_interval | length > 0
       - openssh_client_alive_interval | int
       - openssh_client_alive_interval | int >= 0
 
@@ -294,7 +290,6 @@
   assert:
     that:
       - openssh_client_alive_count_max is defined
-      - openssh_client_alive_count_max | length > 0
       - openssh_client_alive_count_max | int
       - openssh_client_alive_count_max | int >= 0
 
