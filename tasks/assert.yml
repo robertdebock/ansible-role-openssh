@@ -3,7 +3,6 @@
   assert:
     that:
       - openssh_port is defined
-      - openssh_port | length > 0
       - openssh_port | int
       - openssh_port | int > 0
       - openssh_port | int < 65536
