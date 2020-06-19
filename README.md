@@ -83,14 +83,13 @@ openssh_host_key:
 
 openssh_rekey_limit: default none
 
-# openssh_syslog_facility can be AUTH or AUTHPRIV
-openssh_syslog_facility: AUTHPRIV
+openssh_syslog_facility: AUTH
 
 openssh_loglevel: INFO
 
 openssh_login_grace_time: 2m
 openssh_permit_root_login: "yes"
-openssh_scrict_modes: "yes"
+openssh_strict_modes: "yes"
 openssh_max_auth_tries: 6
 openssh_max_sessions: 10
 
