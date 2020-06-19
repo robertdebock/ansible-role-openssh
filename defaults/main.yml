@@ -17,8 +17,7 @@ openssh_host_key:
 
 openssh_rekey_limit: default none
 
-# openssh_syslog_facility can be AUTH or AUTHPRIV
-openssh_syslog_facility: AUTHPRIV
+openssh_syslog_facility: AUTH
 
 openssh_loglevel: INFO
 
