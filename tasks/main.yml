@@ -28,6 +28,7 @@
   file:
     path: "{{ openssh_run_directory }}"
     state: directory
+    mode: "0755"
 
 - name: configure openssh
   template:
