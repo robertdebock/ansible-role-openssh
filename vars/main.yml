@@ -27,7 +27,7 @@ openssh_configuration_file: /etc/ssh/sshd_config
 
 _openssh_service:
   default: sshd
-  Debian-testing: ssh
+  Debian-bullseye: ssh
 
 openssh_service: "{{ _openssh_service[ansible_os_family ~ '-' ~ ansible_distribution_release] | default(_openssh_service['default']) }}"
 
