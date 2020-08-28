@@ -25,7 +25,11 @@ openssh_run_directory: "{{ _openssh_run_directory[ansible_os_family] | default(_
 
 openssh_configuration_file: /etc/ssh/sshd_config
 
-openssh_service: sshd
+_openssh_service:
+  default: sshd
+  Debian-testing: ssh
+
+openssh_service: "{{ _openssh_service[ansible_os_family ~ '-' ~ ansible_distribution_release] | default(_openssh_service['default']) }}"
 
 _openssh_template_src:
   Alpine: sshd_config_Alpine.j2
