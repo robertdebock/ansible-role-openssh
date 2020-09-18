@@ -47,3 +47,9 @@ _openssh_template_mode:
   Suse: "640"
 
 openssh_template_mode: "{{ _openssh_template_mode[ansible_os_family] | default(_openssh_template_mode['default']) }}"
+
+_openssh_sftp_server:
+  default: /usr/libexec/openssh/sftp-server
+  Debian: /usr/lib/openssh/sftp-server
+
+openssh_sftp_server: "{{ _openssh_sftp_server[ansible_os_family] | default(_openssh_sftp_server['default') }}"
