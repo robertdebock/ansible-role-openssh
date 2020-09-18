@@ -33,13 +33,13 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.bootstrap
 ```
 
-For verification `molecule/resources/verify.yml` run after the role has been applied.
+For verification `molecule/resources/verify.yml` runs after the role has been applied.
 ```yaml
 ---
 - name: Verify
   hosts: all
   become: yes
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
     - name: check if connection still works
@@ -162,7 +162,7 @@ openssh_accept_env:
   - LC_TIME
   - XMODIFIERS
 
-openssh_subsystem: sftp /usr/libexec/openssh/sftp-server
+openssh_subsystem: sftp {{ openssh_sftp_server }}
 
 # Restrict access to this (space separated list) of users.
 # For example: `openssh_allow_users: root my_user`
