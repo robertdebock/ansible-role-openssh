@@ -17,11 +17,7 @@ _openssh_key_types:
 
 openssh_key_types: "{{ _openssh_key_types[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_openssh_key_types['default']) }}"
 
-_openssh_run_directory:
-  default: /var/run/sshd/
-  Debian: /run/sshd
-
-openssh_run_directory: "{{ _openssh_run_directory[ansible_os_family] | default(_openssh_run_directory['default']) }}"
+openssh_run_directory: /run/sshd
 
 openssh_configuration_file: /etc/ssh/sshd_config
 

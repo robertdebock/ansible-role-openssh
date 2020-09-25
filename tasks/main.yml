@@ -29,6 +29,8 @@
     path: "{{ openssh_run_directory }}"
     state: directory
     mode: "0755"
+  when:
+    - ansible_os_family == "Debian"
 
 - name: configure openssh
   template:
