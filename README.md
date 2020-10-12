@@ -31,6 +31,7 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.selinux
 ```
 
 For verification `molecule/resources/verify.yml` runs after the role has been applied.
@@ -179,6 +180,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.selinux
 
 ```
 
