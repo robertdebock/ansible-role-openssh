@@ -57,7 +57,8 @@
   assert:
     that:
       - openssh_login_grace_time is defined
-      - openssh_login_grace_time | length > 0
+      - openssh_login_grace_time is number
+      - openssh_login_grace_time | int > 0
     quiet: yes
 
 - name: test if openssh_permit_root_login is set correctly
