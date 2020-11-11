@@ -3,7 +3,7 @@
   assert:
     that:
       - openssh_port is defined
-      - openssh_port | int
+      - openssh_port is number
       - openssh_port | int > 0
       - openssh_port | int < 65536
     quiet: yes
@@ -80,7 +80,7 @@
   assert:
     that:
       - openssh_max_auth_tries is defined
-      - openssh_max_auth_tries | int
+      - openssh_max_auth_tries is number
       - openssh_max_auth_tries | int >= 0
     quiet: yes
 
@@ -88,7 +88,7 @@
   assert:
     that:
       - openssh_max_sessions is defined
-      - openssh_max_sessions | int
+      - openssh_max_sessions is number
       - openssh_max_sessions | int >= 0
     quiet: yes
 
@@ -260,7 +260,7 @@
   assert:
     that:
       - openssh_x11_display_offset is defined
-      - openssh_x11_display_offset | int
+      - openssh_x11_display_offset is number
       - openssh_x11_display_offset | int > 0
     quiet: yes
 
@@ -324,7 +324,7 @@
   assert:
     that:
       - openssh_client_alive_interval is defined
-      - openssh_client_alive_interval | int
+      - openssh_client_alive_interval is number
       - openssh_client_alive_interval | int >= 0
     quiet: yes
 
@@ -332,7 +332,7 @@
   assert:
     that:
       - openssh_client_alive_count_max is defined
-      - openssh_client_alive_count_max | int
+      - openssh_client_alive_count_max is number
       - openssh_client_alive_count_max | int >= 0
     quiet: yes
 
