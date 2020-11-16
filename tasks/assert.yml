@@ -4,8 +4,8 @@
     that:
       - openssh_port is defined
       - openssh_port is number
-      - openssh_port | int > 0
-      - openssh_port | int < 65536
+      - openssh_port > 0
+      - openssh_port < 65536
     quiet: yes
 
 - name: test if openssh_address_family is set correctly
@@ -72,7 +72,7 @@
     that:
       - openssh_max_auth_tries is defined
       - openssh_max_auth_tries is number
-      - openssh_max_auth_tries | int >= 0
+      - openssh_max_auth_tries >= 0
     quiet: yes
 
 - name: test if openssh_max_sessions is set correctly
@@ -80,7 +80,7 @@
     that:
       - openssh_max_sessions is defined
       - openssh_max_sessions is number
-      - openssh_max_sessions | int >= 0
+      - openssh_max_sessions >= 0
     quiet: yes
 
 - name: test if openssh_pub_key_authentication is set correctly
@@ -231,7 +231,7 @@
     that:
       - openssh_x11_display_offset is defined
       - openssh_x11_display_offset is number
-      - openssh_x11_display_offset | int > 0
+      - openssh_x11_display_offset > 0
     quiet: yes
 
 - name: test if openssh_x11_use_localhost is set correctly
@@ -288,7 +288,7 @@
     that:
       - openssh_client_alive_interval is defined
       - openssh_client_alive_interval is number
-      - openssh_client_alive_interval | int >= 0
+      - openssh_client_alive_interval >= 0
     quiet: yes
 
 - name: test if openssh_client_alive_count_max is set correctly
@@ -296,7 +296,7 @@
     that:
       - openssh_client_alive_count_max is defined
       - openssh_client_alive_count_max is number
-      - openssh_client_alive_count_max | int >= 0
+      - openssh_client_alive_count_max >= 0
     quiet: yes
 
 - name: test if openssh_show_patch_level is set correctly
