@@ -12,7 +12,6 @@
   assert:
     that:
       - openssh_address_family is defined
-      - openssh_address_family | length > 0
       - openssh_address_family in [ "any", "inet", "inet6" ]
     quiet: yes
 
@@ -20,28 +19,24 @@
   assert:
     that:
       - openssh_listen_address is defined
-      - openssh_listen_address | length > 0
     quiet: yes
 
 - name: test if openssh_host_key is set correctly
   assert:
     that:
       - openssh_host_key is defined
-      - openssh_host_key | length > 0
     quiet: yes
 
 - name: test if openssh_rekey_limit is set correctly
   assert:
     that:
       - openssh_rekey_limit is defined
-      - openssh_rekey_limit | length > 0
     quiet: yes
 
 - name: test if openssh_syslog_facility is set correctly
   assert:
     that:
       - openssh_syslog_facility is defined
-      - openssh_syslog_facility | length > 0
       - openssh_syslog_facility in [ "DAEMON", "USER", "AUTH", "LOCAL0", "LOCAL1", "LOCAL2", "LOCAL3", "LOCAL4", "LOCAL5", "LOCAL6", "LOCAL7" ]
     quiet: yes
 
@@ -49,7 +44,6 @@
   assert:
     that:
       - openssh_loglevel is defined
-      - openssh_loglevel | length > 0
       - openssh_loglevel in [ "QUIET", "FATAL", "ERROR", "INFO", "VERBOSE", "DEBUG", "DEBUG1", "DEBUG2", "DEBUG3" ]
     quiet: yes
 
@@ -57,14 +51,12 @@
   assert:
     that:
       - openssh_login_grace_time is defined
-      - openssh_login_grace_time | length > 0
     quiet: yes
 
 - name: test if openssh_permit_root_login is set correctly
   assert:
     that:
       - openssh_permit_root_login is defined
-      - openssh_permit_root_login | length > 0
       - openssh_permit_root_login in [ "yes", "no" ]
     quiet: yes
 
@@ -72,7 +64,6 @@
   assert:
     that:
       - openssh_strict_modes is defined
-      - openssh_strict_modes | length > 0
       - openssh_strict_modes in [ "yes", "no" ]
     quiet: yes
 
@@ -96,7 +87,6 @@
   assert:
     that:
       - openssh_pub_key_authentication is defined
-      - openssh_pub_key_authentication | length > 0
       - openssh_pub_key_authentication in [ "yes", "no" ]
     quiet: yes
 
@@ -104,35 +94,30 @@
   assert:
     that:
       - openssh_authorized_key_file is defined
-      - openssh_authorized_key_file | length > 0
     quiet: yes
 
 - name: test if openssh_authorized_prinicpals_file is set correctly
   assert:
     that:
       - openssh_authorized_prinicpals_file is defined
-      - openssh_authorized_prinicpals_file | length > 0
     quiet: yes
 
 - name: test if openssh_authorized_keys_command is set correctly
   assert:
     that:
       - openssh_authorized_keys_command is defined
-      - openssh_authorized_keys_command | length > 0
     quiet: yes
 
 - name: test if openssh_authorized_keys_command_user is set correctly
   assert:
     that:
       - openssh_authorized_keys_command_user is defined
-      - openssh_authorized_keys_command_user | length > 0
     quiet: yes
 
 - name: test if openssh_host_based_authentication is set correctly
   assert:
     that:
       - openssh_host_based_authentication is defined
-      - openssh_host_based_authentication | length > 0
       - openssh_host_based_authentication in [ "yes", "no" ]
     quiet: yes
 
@@ -140,7 +125,6 @@
   assert:
     that:
       - openssh_ignore_user_known_hosts is defined
-      - openssh_ignore_user_known_hosts | length > 0
       - openssh_ignore_user_known_hosts in [ "yes", "no" ]
     quiet: yes
 
@@ -148,7 +132,6 @@
   assert:
     that:
       - openssh_ignore_rhosts is defined
-      - openssh_ignore_rhosts | length > 0
       - openssh_ignore_rhosts in [ "yes", "no" ]
     quiet: yes
 
@@ -156,7 +139,6 @@
   assert:
     that:
       - openssh_permit_empty_passwords is defined
-      - openssh_permit_empty_passwords | length > 0
       - openssh_permit_empty_passwords in [ "yes", "no" ]
     quiet: yes
 
@@ -164,7 +146,6 @@
   assert:
     that:
       - openssh_password_authentication is defined
-      - openssh_password_authentication | length > 0
       - openssh_password_authentication in [ "yes", "no" ]
     quiet: yes
 
@@ -172,7 +153,6 @@
   assert:
     that:
       - openssh_challenge_response_authentication is defined
-      - openssh_challenge_response_authentication | length > 0
       - openssh_challenge_response_authentication in [ "yes", "no" ]
     quiet: yes
 
@@ -180,7 +160,6 @@
   assert:
     that:
       - openssh_gssapi_authentication is defined
-      - openssh_gssapi_authentication | length > 0
       - openssh_gssapi_authentication in [ "yes", "no" ]
     quiet: yes
 
@@ -188,7 +167,6 @@
   assert:
     that:
       - openssh_gssapi_cleanup_credentials is defined
-      - openssh_gssapi_cleanup_credentials | length > 0
       - openssh_gssapi_cleanup_credentials in [ "yes", "no" ]
     quiet: yes
 
@@ -196,7 +174,6 @@
   assert:
     that:
       - openssh_gssapi_strict_acceptor_check is defined
-      - openssh_gssapi_strict_acceptor_check | length > 0
       - openssh_gssapi_strict_acceptor_check in [ "yes", "no" ]
     quiet: yes
 
@@ -204,7 +181,6 @@
   assert:
     that:
       - openssh_gssapi_key_exchange is defined
-      - openssh_gssapi_key_exchange | length > 0
       - openssh_gssapi_key_exchange in [ "yes", "no" ]
     quiet: yes
 
@@ -212,7 +188,6 @@
   assert:
     that:
       - openssh_gssaip_enable_k5_users is defined
-      - openssh_gssaip_enable_k5_users | length > 0
       - openssh_gssaip_enable_k5_users in [ "yes", "no" ]
     quiet: yes
 
@@ -220,7 +195,6 @@
   assert:
     that:
       - openssh_use_pam is defined
-      - openssh_use_pam | length > 0
       - openssh_use_pam in [ "yes", "no" ]
     quiet: yes
 
@@ -228,7 +202,6 @@
   assert:
     that:
       - openssh_allow_agent_forwarding is defined
-      - openssh_allow_agent_forwarding | length > 0
       - openssh_allow_agent_forwarding in [ "yes", "no" ]
     quiet: yes
 
@@ -236,7 +209,6 @@
   assert:
     that:
       - openssh_allow_tcp_forwarding is defined
-      - openssh_allow_tcp_forwarding | length > 0
       - openssh_allow_tcp_forwarding in [ "yes", "no" ]
     quiet: yes
 
@@ -244,7 +216,6 @@
   assert:
     that:
       - openssh_gateway_ports is defined
-      - openssh_gateway_ports | length > 0
       - openssh_gateway_ports in [ "yes", "no" ]
     quiet: yes
 
@@ -252,7 +223,6 @@
   assert:
     that:
       - openssh_x11_forwarding is defined
-      - openssh_x11_forwarding | length > 0
       - openssh_x11_forwarding in [ "yes", "no" ]
     quiet: yes
 
@@ -268,7 +238,6 @@
   assert:
     that:
       - openssh_x11_use_localhost is defined
-      - openssh_x11_use_localhost | length > 0
       - openssh_x11_use_localhost in [ "yes", "no" ]
     quiet: yes
 
@@ -276,7 +245,6 @@
   assert:
     that:
       - openssh_permit_tty is defined
-      - openssh_permit_tty | length > 0
       - openssh_permit_tty in [ "yes", "no" ]
     quiet: yes
 
@@ -284,7 +252,6 @@
   assert:
     that:
       - openssh_print_motd is defined
-      - openssh_print_motd | length > 0
       - openssh_print_motd in [ "yes", "no" ]
     quiet: yes
 
@@ -292,7 +259,6 @@
   assert:
     that:
       - openssh_print_last_log is defined
-      - openssh_print_last_log | length > 0
       - openssh_print_last_log in [ "yes", "no" ]
     quiet: yes
 
@@ -300,7 +266,6 @@
   assert:
     that:
       - openssh_tcp_keep_alive is defined
-      - openssh_tcp_keep_alive | length > 0
       - openssh_tcp_keep_alive in [ "yes", "no" ]
     quiet: yes
 
@@ -308,7 +273,6 @@
   assert:
     that:
       - openssh_permit_user_environment is defined
-      - openssh_permit_user_environment | length > 0
       - openssh_permit_user_environment in [ "yes", "no" ]
     quiet: yes
 
@@ -316,7 +280,6 @@
   assert:
     that:
       - openssh_compression is defined
-      - openssh_compression | length > 0
       - openssh_compression in [ "yes", "no", "delayed" ]
     quiet: yes
 
@@ -340,7 +303,6 @@
   assert:
     that:
       - openssh_show_patch_level is defined
-      - openssh_show_patch_level | length > 0
       - openssh_show_patch_level in [ "yes", "no" ]
     quiet: yes
 
@@ -348,7 +310,6 @@
   assert:
     that:
       - openssh_use_dns is defined
-      - openssh_use_dns | length > 0
       - openssh_use_dns in [ "yes", "no" ]
     quiet: yes
 
@@ -356,21 +317,18 @@
   assert:
     that:
       - openssh_pid_file is defined
-      - openssh_pid_file | length > 0
     quiet: yes
 
 - name: test if openssh_max_startups is set correctly
   assert:
     that:
       - openssh_max_startups is defined
-      - openssh_max_startups | length > 0
     quiet: yes
 
 - name: test if openssh_permit_tunnel is set correctly
   assert:
     that:
       - openssh_permit_tunnel is defined
-      - openssh_permit_tunnel | length > 0
       - openssh_permit_tunnel in [ "yes", "no" ]
     quiet: yes
 
@@ -378,33 +336,28 @@
   assert:
     that:
       - openssh_chroot_directory is defined
-      - openssh_chroot_directory | length > 0
     quiet: yes
 
 - name: test if openssh_version_addendum is set correctly
   assert:
     that:
       - openssh_version_addendum is defined
-      - openssh_version_addendum | length > 0
     quiet: yes
 
 - name: test if openssh_banner is set correctly
   assert:
     that:
       - openssh_banner is defined
-      - openssh_banner | length > 0
     quiet: yes
 
 - name: test if openssh_accept_env is set correctly
   assert:
     that:
       - openssh_accept_env is defined
-      - openssh_accept_env | length > 0
     quiet: yes
 
 - name: test if openssh_subsystem is set correctly
   assert:
     that:
       - openssh_subsystem is defined
-      - openssh_subsystem | length > 0
     quiet: yes
