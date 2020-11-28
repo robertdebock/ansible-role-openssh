@@ -24,11 +24,11 @@
       - openssh_listen_addresses is iterable
     quiet: yes
 
-- name: test if openssh_host_key is set correctly
+- name: test if openssh_host_keys is set correctly
   assert:
     that:
-      - openssh_host_key is defined
-      - openssh_host_key is string
+      - openssh_host_keys is defined
+      - openssh_host_keys is iterable
     quiet: yes
 
 - name: test if openssh_rekey_limit is set correctly

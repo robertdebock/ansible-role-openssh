@@ -8,7 +8,7 @@ AddressFamily {{ openssh_address_family }}
 ListenAddress {{ address }}
 {% endfor %}
 
-{% for hostkey in openssh_host_key %}
+{% for hostkey in openssh_host_keys %}
 HostKey {{ hostkey }}
 {% endfor %}
 

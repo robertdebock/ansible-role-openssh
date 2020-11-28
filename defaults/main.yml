@@ -10,7 +10,7 @@ openssh_listen_addresses:
   - '0.0.0.0'
   - '::'
 
-openssh_host_key:
+openssh_host_keys:
   - /etc/ssh/ssh_host_rsa_key
   - /etc/ssh/ssh_host_ecdsa_key
   - /etc/ssh/ssh_host_ed25519_key
