@@ -17,7 +17,7 @@
 #
 Port {{ openssh_port }}
 AddressFamily {{ openssh_address_family }}
-{% for address in openssh_listen_address %}
+{% for address in openssh_listen_addresses %}
 ListenAddress {{ address }}
 {% endfor %}
 
