@@ -17,11 +17,11 @@
       - openssh_address_family in [ "any", "inet", "inet6" ]
     quiet: yes
 
-- name: test if openssh_listen_address is set correctly
+- name: test if openssh_listen_addresses is set correctly
   assert:
     that:
-      - openssh_listen_address is defined
-      - openssh_listen_address is string
+      - openssh_listen_addresses is defined
+      - openssh_listen_addresses is iterable
     quiet: yes
 
 - name: test if openssh_host_key is set correctly
