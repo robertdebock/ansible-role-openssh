@@ -120,7 +120,7 @@ openssh_version_addendum: none
 
 openssh_banner: none
 
-openssh_accept_env:
+openssh_accept_envs:
   - LANG
   - LANGUAGE
   - LC_ADDRESS

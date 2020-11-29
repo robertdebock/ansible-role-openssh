@@ -133,7 +133,7 @@ VersionAddendum {{ openssh_version_addendum }}
 Banner {{ openssh_banner }}
 
 # Accept locale-related environment variables
-{% for item in openssh_accept_env %}
+{% for item in openssh_accept_envs %}
 AcceptEnv {{ item }}
 {% endfor %}
 

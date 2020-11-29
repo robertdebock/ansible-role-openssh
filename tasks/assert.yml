@@ -396,11 +396,11 @@
       - openssh_banner is string
     quiet: yes
 
-- name: test if openssh_accept_env is set correctly
+- name: test if openssh_accept_envs is set correctly
   assert:
     that:
-      - openssh_accept_env is defined
-      - openssh_accept_env is string
+      - openssh_accept_envs is defined
+      - openssh_accept_envs is iterable
     quiet: yes
 
 - name: test if openssh_subsystem is set correctly
