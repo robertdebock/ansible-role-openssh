@@ -2,9 +2,9 @@
 
 Install and configure openssh on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-openssh.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-openssh)|[![github](https://github.com/robertdebock/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-openssh/actions)|[![quality](https://img.shields.io/ansible/quality/30937)](https://galaxy.ansible.com/robertdebock/openssh)|[![downloads](https://img.shields.io/ansible/role/d/30937)](https://galaxy.ansible.com/robertdebock/openssh)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-openssh.svg)](https://github.com/robertdebock/ansible-role-openssh/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-openssh.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-openssh)|[![github](https://github.com/robertdebock/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-openssh/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-openssh/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-openssh)|[![quality](https://img.shields.io/ansible/quality/30937)](https://galaxy.ansible.com/robertdebock/openssh)|[![downloads](https://img.shields.io/ansible/role/d/30937)](https://galaxy.ansible.com/robertdebock/openssh)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-openssh.svg)](https://github.com/robertdebock/ansible-role-openssh/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -149,6 +149,7 @@ openssh_subsystem: sftp {{ openssh_sftp_server }}
 
 - Access to a repository containing packages, likely on the internet.
 - A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
+- Jinja 2.11.2 or above.
 
 ## [Status of requirements](#status-of-requirements)
 
