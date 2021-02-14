@@ -2,7 +2,7 @@
 # handlers file for openssh
 
 - name: restart openssh
-  service:
+  ansible.builtin.service:
     name: "{{ openssh_service }}"
     state: restarted
   when:

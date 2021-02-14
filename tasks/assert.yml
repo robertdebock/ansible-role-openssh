@@ -1,7 +1,7 @@
 ---
 
 - name: test if ssh_port is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_port is defined
       - openssh_port is number
@@ -10,7 +10,7 @@
     quiet: yes
 
 - name: test if openssh_address_family is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_address_family is defined
       - openssh_address_family is string
@@ -18,28 +18,28 @@
     quiet: yes
 
 - name: test if openssh_listen_addresses is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_listen_addresses is defined
       - openssh_listen_addresses is iterable
     quiet: yes
 
 - name: test if openssh_host_keys is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_host_keys is defined
       - openssh_host_keys is iterable
     quiet: yes
 
 - name: test if openssh_rekey_limit is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_rekey_limit is defined
       - openssh_rekey_limit is string
     quiet: yes
 
 - name: test if openssh_syslog_facility is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_syslog_facility is defined
       - openssh_syslog_facility is string
@@ -47,7 +47,7 @@
     quiet: yes
 
 - name: test if openssh_loglevel is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_loglevel is defined
       - openssh_loglevel is string
@@ -55,14 +55,14 @@
     quiet: yes
 
 - name: test if openssh_login_grace_time is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_login_grace_time is defined
       - openssh_login_grace_time is string
     quiet: yes
 
 - name: test if openssh_permit_root_login is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_permit_root_login is defined
       - openssh_permit_root_login is string
@@ -70,7 +70,7 @@
     quiet: yes
 
 - name: test if openssh_strict_modes is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_strict_modes is defined
       - openssh_strict_modes is string
@@ -78,7 +78,7 @@
     quiet: yes
 
 - name: test if openssh_max_auth_tries is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_max_auth_tries is defined
       - openssh_max_auth_tries is number
@@ -86,7 +86,7 @@
     quiet: yes
 
 - name: test if openssh_max_sessions is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_max_sessions is defined
       - openssh_max_sessions is number
@@ -94,7 +94,7 @@
     quiet: yes
 
 - name: test if openssh_pub_key_authentication is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_pub_key_authentication is defined
       - openssh_pub_key_authentication is string
@@ -102,35 +102,35 @@
     quiet: yes
 
 - name: test if openssh_authorized_key_file is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_authorized_key_file is defined
       - openssh_authorized_key_file is string
     quiet: yes
 
 - name: test if openssh_authorized_prinicpals_file is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_authorized_prinicpals_file is defined
       - openssh_authorized_prinicpals_file is string
     quiet: yes
 
 - name: test if openssh_authorized_keys_command is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_authorized_keys_command is defined
       - openssh_authorized_keys_command is string
     quiet: yes
 
 - name: test if openssh_authorized_keys_command_user is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_authorized_keys_command_user is defined
       - openssh_authorized_keys_command_user is string
     quiet: yes
 
 - name: test if openssh_host_based_authentication is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_host_based_authentication is defined
       - openssh_host_based_authentication is string
@@ -138,7 +138,7 @@
     quiet: yes
 
 - name: test if openssh_ignore_user_known_hosts is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_ignore_user_known_hosts is defined
       - openssh_ignore_user_known_hosts is string
@@ -146,7 +146,7 @@
     quiet: yes
 
 - name: test if openssh_ignore_rhosts is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_ignore_rhosts is defined
       - openssh_ignore_rhosts is string
@@ -154,7 +154,7 @@
     quiet: yes
 
 - name: test if openssh_permit_empty_passwords is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_permit_empty_passwords is defined
       - openssh_permit_empty_passwords is string
@@ -162,7 +162,7 @@
     quiet: yes
 
 - name: test if openssh_password_authentication is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_password_authentication is defined
       - openssh_password_authentication is string
@@ -170,7 +170,7 @@
     quiet: yes
 
 - name: test if openssh_challenge_response_authentication is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_challenge_response_authentication is defined
       - openssh_challenge_response_authentication is string
@@ -178,7 +178,7 @@
     quiet: yes
 
 - name: test if openssh_gssapi_authentication is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_gssapi_authentication is defined
       - openssh_gssapi_authentication is string
@@ -186,7 +186,7 @@
     quiet: yes
 
 - name: test if openssh_gssapi_cleanup_credentials is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_gssapi_cleanup_credentials is defined
       - openssh_gssapi_cleanup_credentials is string
@@ -194,7 +194,7 @@
     quiet: yes
 
 - name: test if openssh_gssapi_strict_acceptor_check is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_gssapi_strict_acceptor_check is defined
       - openssh_gssapi_strict_acceptor_check is string
@@ -202,7 +202,7 @@
     quiet: yes
 
 - name: test if openssh_gssapi_key_exchange is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_gssapi_key_exchange is defined
       - openssh_gssapi_key_exchange is string
@@ -210,7 +210,7 @@
     quiet: yes
 
 - name: test if openssh_gssaip_enable_k5_users is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_gssaip_enable_k5_users is defined
       - openssh_gssaip_enable_k5_users is string
@@ -218,7 +218,7 @@
     quiet: yes
 
 - name: test if openssh_use_pam is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_use_pam is defined
       - openssh_use_pam is string
@@ -226,7 +226,7 @@
     quiet: yes
 
 - name: test if openssh_allow_agent_forwarding is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_allow_agent_forwarding is defined
       - openssh_allow_agent_forwarding is string
@@ -234,7 +234,7 @@
     quiet: yes
 
 - name: test if openssh_allow_tcp_forwarding is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_allow_tcp_forwarding is defined
       - openssh_allow_tcp_forwarding is string
@@ -242,7 +242,7 @@
     quiet: yes
 
 - name: test if openssh_gateway_ports is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_gateway_ports is defined
       - openssh_gateway_ports is string
@@ -250,7 +250,7 @@
     quiet: yes
 
 - name: test if openssh_x11_forwarding is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_x11_forwarding is defined
       - openssh_x11_forwarding is string
@@ -258,7 +258,7 @@
     quiet: yes
 
 - name: test if openssh_x11_display_offset is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_x11_display_offset is defined
       - openssh_x11_display_offset is number
@@ -266,7 +266,7 @@
     quiet: yes
 
 - name: test if openssh_x11_use_localhost is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_x11_use_localhost is defined
       - openssh_x11_use_localhost is string
@@ -274,7 +274,7 @@
     quiet: yes
 
 - name: test if openssh_permit_tty is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_permit_tty is defined
       - openssh_permit_tty is string
@@ -282,7 +282,7 @@
     quiet: yes
 
 - name: test if openssh_print_motd is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_print_motd is defined
       - openssh_print_motd is string
@@ -290,7 +290,7 @@
     quiet: yes
 
 - name: test if openssh_print_last_log is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_print_last_log is defined
       - openssh_print_last_log is string
@@ -298,7 +298,7 @@
     quiet: yes
 
 - name: test if openssh_tcp_keep_alive is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_tcp_keep_alive is defined
       - openssh_tcp_keep_alive is string
@@ -306,7 +306,7 @@
     quiet: yes
 
 - name: test if openssh_permit_user_environment is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_permit_user_environment is defined
       - openssh_permit_user_environment is string
@@ -314,7 +314,7 @@
     quiet: yes
 
 - name: test if openssh_compression is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_compression is defined
       - openssh_compression is string
@@ -322,7 +322,7 @@
     quiet: yes
 
 - name: test if openssh_client_alive_interval is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_client_alive_interval is defined
       - openssh_client_alive_interval is number
@@ -330,7 +330,7 @@
     quiet: yes
 
 - name: test if openssh_client_alive_count_max is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_client_alive_count_max is defined
       - openssh_client_alive_count_max is number
@@ -338,7 +338,7 @@
     quiet: yes
 
 - name: test if openssh_show_patch_level is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_show_patch_level is defined
       - openssh_show_patch_level is string
@@ -346,7 +346,7 @@
     quiet: yes
 
 - name: test if openssh_use_dns is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_use_dns is defined
       - openssh_use_dns is string
@@ -354,21 +354,21 @@
     quiet: yes
 
 - name: test if openssh_pid_file is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_pid_file is defined
       - openssh_pid_file is string
     quiet: yes
 
 - name: test if openssh_max_startups is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_max_startups is defined
       - openssh_max_startups is string
     quiet: yes
 
 - name: test if openssh_permit_tunnel is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_permit_tunnel is defined
       - openssh_permit_tunnel is string
@@ -376,35 +376,35 @@
     quiet: yes
 
 - name: test if openssh_chroot_directory is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_chroot_directory is defined
       - openssh_chroot_directory is string
     quiet: yes
 
 - name: test if openssh_version_addendum is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_version_addendum is defined
       - openssh_version_addendum is string
     quiet: yes
 
 - name: test if openssh_banner is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_banner is defined
       - openssh_banner is string
     quiet: yes
 
 - name: test if openssh_accept_envs is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_accept_envs is defined
       - openssh_accept_envs is iterable
     quiet: yes
 
 - name: test if openssh_subsystem is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - openssh_subsystem is defined
       - openssh_subsystem is string
