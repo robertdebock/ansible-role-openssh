@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install openssh
-  package:
+  ansible.builtin.package:
     name: "{{ openssh_packages }}"
     state: present
 
 - name: configure selinux to allow openssh_port
-  seport:
+  community.general.seport:
     ports: "{{ openssh_port }}"
     proto: "tcp"
     setype: "ssh_port_t"
@@ -28,7 +28,7 @@
   loop: "{{ openssh_key_types }}"
 
 - name: make run directory
-  file:
+  ansible.builtin.file:
     path: "{{ openssh_run_directory }}"
     state: directory
     mode: "0755"
@@ -36,7 +36,7 @@
     - ansible_os_family == "Debian"
 
 - name: configure openssh
-  template:
+  ansible.builtin.template:
     dest: "{{ openssh_configuration_file }}"
     src: "{{ openssh_template_src }}"
     mode: "{{ openssh_template_mode }}"
@@ -47,7 +47,7 @@
     - restart openssh
 
 - name: start and enable openssh
-  service:
+  ansible.builtin.service:
     name: "{{ openssh_service }}"
     state: started
     enabled: yes
