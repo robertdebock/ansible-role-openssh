@@ -6,10 +6,10 @@
 
   tasks:
     - name: check if connection still works
-      ping:
+      ansible.builtin.ping:
 
     - name: Check if AllowUsers is set
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: /etc/ssh/sshd_config
         line: AllowUsers root
       check_mode: yes
