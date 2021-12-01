@@ -141,7 +141,7 @@ openssh_accept_envs:
 openssh_subsystem: sftp {{ openssh_sftp_server }}
 
 # Restrict access to this (space separated list) of users.
-# For example: `openssh_allow_users: root my_user`
+# For example: "openssh_allow_users: root my_user"
 # openssh_allow_users: root
 ```
 
