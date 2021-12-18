@@ -7,3 +7,4 @@
   roles:
     - role: ansible-role-openssh
       openssh_allow_users: root
+      openssh_allow_groups: root

@@ -140,9 +140,12 @@ openssh_accept_envs:
 
 openssh_subsystem: sftp {{ openssh_sftp_server }}
 
-# Restrict access to this (space separated list) of users.
+# Restrict access to this (space separated list) of users or groups.
 # For example: "openssh_allow_users: root my_user"
 # openssh_allow_users: root
+
+# For example: "openssh_allow_groups: wheel my_group"
+# openssh_allow_groups: wheel
 ```
 
 ## [Requirements](#requirements)
