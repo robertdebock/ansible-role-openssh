@@ -19,6 +19,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   roles:
     - role: robertdebock.openssh
       openssh_allow_users: root
+      openssh_allow_groups: root
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
