@@ -146,6 +146,10 @@ openssh_subsystem: sftp {{ openssh_sftp_server }}
 
 # For example: "openssh_allow_groups: wheel my_group"
 # openssh_allow_groups: wheel
+
+# Whether to restart openssh immediately or after
+# all other Ansible tasks have been completed.
+openssh_restart_immediately: no
 ```
 
 ## [Requirements](#requirements)
