@@ -16,3 +16,12 @@
       register: openssh_check_if_allowusers_is_set
       failed_when:
         - openssh_check_if_allowusers_is_set is changed
+
+    - name: Check if AllowGroups is set
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        line: AllowGroups root
+      check_mode: yes
+      register: openssh_check_if_allowgroups_is_set
+      failed_when:
+        - openssh_check_if_allowgroups_is_set is changed
