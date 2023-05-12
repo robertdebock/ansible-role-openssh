@@ -5,7 +5,7 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
+    - name: Check if connection still works
       ansible.builtin.ping:
 
     - name: Check if AllowUsers is set
