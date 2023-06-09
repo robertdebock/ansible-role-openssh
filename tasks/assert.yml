@@ -36,6 +36,7 @@
     that:
       - openssh_rekey_limit is defined
       - openssh_rekey_limit is string
+      - openssh_rekey_limit is not none
     quiet: yes
 
 - name: assert | Test if openssh_syslog_facility is set correctly
@@ -59,6 +60,7 @@
     that:
       - openssh_login_grace_time is defined
       - openssh_login_grace_time is string
+      - openssh_login_grace_time is not none
     quiet: yes
 
 - name: assert | Test if openssh_permit_root_login is set correctly
@@ -106,6 +108,7 @@
     that:
       - openssh_authorized_key_file is defined
       - openssh_authorized_key_file is string
+      - openssh_authorized_key_file is not none
     quiet: yes
 
 - name: assert | Test if openssh_authorized_prinicpals_file is set correctly
@@ -113,6 +116,7 @@
     that:
       - openssh_authorized_prinicpals_file is defined
       - openssh_authorized_prinicpals_file is string
+      - openssh_authorized_prinicpals_file is not none
     quiet: yes
 
 - name: assert | Test if openssh_authorized_keys_command is set correctly
@@ -120,6 +124,7 @@
     that:
       - openssh_authorized_keys_command is defined
       - openssh_authorized_keys_command is string
+      - openssh_authorized_keys_command is not none
     quiet: yes
 
 - name: assert | Test if openssh_authorized_keys_command_user is set correctly
@@ -127,6 +132,7 @@
     that:
       - openssh_authorized_keys_command_user is defined
       - openssh_authorized_keys_command_user is string
+      - openssh_authorized_keys_command_user is not none
     quiet: yes
 
 - name: assert | Test if openssh_host_based_authentication is set correctly
@@ -358,6 +364,7 @@
     that:
       - openssh_pid_file is defined
       - openssh_pid_file is string
+      - openssh_pid_file is not none
     quiet: yes
 
 - name: assert | Test if openssh_max_startups is set correctly
@@ -365,6 +372,7 @@
     that:
       - openssh_max_startups is defined
       - openssh_max_startups is string
+      - openssh_max_startups is not none
     quiet: yes
 
 - name: assert | Test if openssh_permit_tunnel is set correctly
@@ -380,6 +388,7 @@
     that:
       - openssh_chroot_directory is defined
       - openssh_chroot_directory is string
+      - openssh_chroot_directory is not none
     quiet: yes
 
 - name: assert | Test if openssh_version_addendum is set correctly
@@ -387,6 +396,7 @@
     that:
       - openssh_version_addendum is defined
       - openssh_version_addendum is string
+      - openssh_version_addendum is not none
     quiet: yes
 
 - name: assert | Test if openssh_banner is set correctly
@@ -394,6 +404,7 @@
     that:
       - openssh_banner is defined
       - openssh_banner is string
+      - openssh_banner is not none
     quiet: yes
 
 - name: assert | Test if openssh_accept_envs is set correctly
@@ -408,6 +419,7 @@
     that:
       - openssh_subsystem is defined
       - openssh_subsystem is string
+      - openssh_subsystem is not none
     quiet: yes
 
 - name: assert | Test if openssh_trusted_user_ca_keys is set correctly
@@ -415,4 +427,5 @@
     that:
       - openssh_trusted_user_ca_keys is defined
       - openssh_trusted_user_ca_keys is string
+      - openssh_trusted_user_ca_keys is not none
     quiet: yes
