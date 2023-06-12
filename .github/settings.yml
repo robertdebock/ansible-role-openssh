@@ -5,4 +5,4 @@
 repository:
   description: Install and configure openssh on your system.
   homepage: https://robertdebock.nl/
-  topics: openssh, ansible, molecule, tox, playbook
+  topics: openssh, system, security, ansible, molecule, tox, playbook
