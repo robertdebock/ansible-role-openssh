@@ -2,9 +2,9 @@
 
 Install and configure openssh on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-openssh/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-openssh/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-openssh)|[![quality](https://img.shields.io/ansible/quality/30937)](https://galaxy.ansible.com/robertdebock/openssh)|[![downloads](https://img.shields.io/ansible/role/d/30937)](https://galaxy.ansible.com/robertdebock/openssh)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-openssh.svg)](https://github.com/robertdebock/ansible-role-openssh/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-openssh/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-openssh/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-openssh)|[![downloads](https://img.shields.io/ansible/role/d/24557)](https://galaxy.ansible.com/robertdebock/openssh)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-openssh.svg)](https://github.com/robertdebock/ansible-role-openssh/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -199,7 +199,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-openssh/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-openssh/issues).
 
 ## [License](#license)
 
