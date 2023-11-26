@@ -1,4 +1,4 @@
-# Ansible role [openssh](#openssh)
+# [Ansible role openssh](#openssh)
 
 Install and configure openssh on your system.
 
