@@ -19,10 +19,9 @@ openssh_configuration_file: /etc/ssh/sshd_config
 _openssh_service:
   default: sshd
   Debian-bullseye: ssh
-  Ubuntu-19: ssh
-  Ubuntu-20: ssh
-  Ubuntu-22: ssh
-  Ubuntu-24: ssh
+  Ubuntu-focal: ssh  # Ubuntu 20
+  Ubuntu-jammy: ssh  # Ubuntu 22
+  Ubuntu-noble: ssh  # Ubuntu 24
 openssh_service: "{{ _openssh_service[ansible_distribution ~ '-' ~ ansible_distribution_release] | default(_openssh_service['default'] ) }}"
 
 _openssh_template_src:
