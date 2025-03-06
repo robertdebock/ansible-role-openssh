@@ -18,7 +18,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   gather_facts: true
 
   roles:
-    - role: robertdebock.openssh
+    - role: ansible-role-openssh
       openssh_allow_users:
         - root
       openssh_allow_groups:
