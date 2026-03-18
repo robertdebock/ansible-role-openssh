@@ -6,7 +6,7 @@ _openssh_packages:
     - openssh-server
   Suse:
     - openssh
-openssh_packages: "{{ _openssh_packages[ansible_os_family] | default(_openssh_packages['default']) }}"
+openssh_packages: "{{ _openssh_packages[ansible_facts['os_family']] | default(_openssh_packages['default']) }}"
 
 openssh_key_types:
   - rsa
@@ -22,7 +22,7 @@ _openssh_service:
   Ubuntu-focal: ssh  # Ubuntu 20
   Ubuntu-jammy: ssh  # Ubuntu 22
   Ubuntu-noble: ssh  # Ubuntu 24
-openssh_service: "{{ _openssh_service[ansible_distribution ~ '-' ~ ansible_distribution_release] | default(_openssh_service['default'] ) }}"
+openssh_service: "{{ _openssh_service[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_release']] | default(_openssh_service['default'] ) }}"
 
 _openssh_template_src:
   Alpine: sshd_config_Alpine.j2
@@ -31,15 +31,15 @@ _openssh_template_src:
   RedHat-7: sshd_config_RedHat-7.j2
   RedHat: sshd_config_RedHat.j2
   Suse: sshd_config_Suse.j2
-openssh_template_src: "{{ _openssh_template_src[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_openssh_template_src[ansible_distribution] | default(_openssh_template_src[ansible_os_family] )) }}"
+openssh_template_src: "{{ _openssh_template_src[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_openssh_template_src[ansible_facts['distribution']] | default(_openssh_template_src[ansible_facts['os_family']] )) }}"
 
 _openssh_template_mode:
   default: "644"
   RedHat: "600"
   Suse: "640"
-openssh_template_mode: "{{ _openssh_template_mode[ansible_os_family] | default(_openssh_template_mode['default']) }}"
+openssh_template_mode: "{{ _openssh_template_mode[ansible_facts['os_family']] | default(_openssh_template_mode['default']) }}"
 
 _openssh_sftp_server:
   default: /usr/libexec/openssh/sftp-server
   Debian: /usr/lib/openssh/sftp-server
-openssh_sftp_server: "{{ _openssh_sftp_server[ansible_os_family] | default(_openssh_sftp_server['default']) }}"
+openssh_sftp_server: "{{ _openssh_sftp_server[ansible_facts['os_family']] | default(_openssh_sftp_server['default']) }}"
